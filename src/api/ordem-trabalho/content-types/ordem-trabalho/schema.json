@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordem_trabalhos",
+  "info": {
+    "singularName": "ordem-trabalho",
+    "pluralName": "ordem-trabalhos",
+    "displayName": "Ordem Trabalho"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numero_ot": {
+      "type": "string"
+    },
+    "data_solicitacao": {
+      "type": "datetime"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cliente.cliente"
+    },
+    "veiculo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::veiculo.veiculo"
+    },
+    "motorista": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::motorista.motorista"
+    },
+    "numero_mtr": {
+      "type": "string"
+    },
+    "nota_fiscal": {
+      "type": "string"
+    },
+    "status_ot": {
+      "type": "string"
+    }
+  }
+}

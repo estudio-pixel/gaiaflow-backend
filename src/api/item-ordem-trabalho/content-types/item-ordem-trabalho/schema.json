@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "item_ordem_trabalhos",
+  "info": {
+    "singularName": "item-ordem-trabalho",
+    "pluralName": "item-ordem-trabalhos",
+    "displayName": "Item Ordem Trabalho"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ordem_trabalho": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ordem-trabalho.ordem-trabalho"
+    },
+    "servico": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::servico.servico"
+    },
+    "unidade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::unidade.unidade"
+    },
+    "quantidade": {
+      "type": "decimal"
+    },
+    "valor_unitario": {
+      "type": "decimal"
+    },
+    "valor_total": {
+      "type": "decimal"
+    },
+    "observacoes": {
+      "type": "string"
+    }
+  }
+}

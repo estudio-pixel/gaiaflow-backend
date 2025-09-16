@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "veiculos",
+  "info": {
+    "singularName": "veiculo",
+    "pluralName": "veiculos",
+    "displayName": "Veiculo"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "placa": {
+      "type": "string"
+    },
+    "modelo": {
+      "type": "string"
+    },
+    "km_por_litro": {
+      "type": "decimal"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

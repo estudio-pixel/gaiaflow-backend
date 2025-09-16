@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modals",
+  "info": {
+    "singularName": "modal",
+    "pluralName": "modals",
+    "displayName": "Modal"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

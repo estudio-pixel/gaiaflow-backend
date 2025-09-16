@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motoristas",
+  "info": {
+    "singularName": "motorista",
+    "pluralName": "motoristas",
+    "displayName": "Motorista"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "habilitacao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

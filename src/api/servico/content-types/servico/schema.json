@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicos",
+  "info": {
+    "singularName": "servico",
+    "pluralName": "servicos",
+    "displayName": "Servico"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "modal": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modal.modal"
+    },
+    "classe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::classe.classe"
+    },
+    "descricao_servico": {
+      "type": "string"
+    },
+    "valor_unitario": {
+      "type": "decimal"
+    },
+    "ativo": {
+      "type": "boolean"
+    }
+  }
+}

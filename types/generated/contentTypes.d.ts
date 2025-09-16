@@ -373,6 +373,297 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClasseClasse extends Struct.CollectionTypeSchema {
+  collectionName: 'classes';
+  info: {
+    displayName: 'Classe';
+    pluralName: 'classes';
+    singularName: 'classe';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::classe.classe'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
+  collectionName: 'clientes';
+  info: {
+    displayName: 'Cliente';
+    pluralName: 'clientes';
+    singularName: 'cliente';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    cnpj: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cliente.cliente'
+    > &
+      Schema.Attribute.Private;
+    percentual_retencao: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    razao_social: Schema.Attribute.String;
+    tem_retencao: Schema.Attribute.Boolean;
+    tipo_pagamento: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiItemOrdemTrabalhoItemOrdemTrabalho
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'item_ordem_trabalhos';
+  info: {
+    displayName: 'Item Ordem Trabalho';
+    pluralName: 'item-ordem-trabalhos';
+    singularName: 'item-ordem-trabalho';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::item-ordem-trabalho.item-ordem-trabalho'
+    > &
+      Schema.Attribute.Private;
+    observacoes: Schema.Attribute.String;
+    ordem_trabalho: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::ordem-trabalho.ordem-trabalho'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    quantidade: Schema.Attribute.Decimal;
+    servico: Schema.Attribute.Relation<'oneToOne', 'api::servico.servico'>;
+    unidade: Schema.Attribute.Relation<'oneToOne', 'api::unidade.unidade'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valor_total: Schema.Attribute.Decimal;
+    valor_unitario: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ApiModalModal extends Struct.CollectionTypeSchema {
+  collectionName: 'modals';
+  info: {
+    displayName: 'Modal';
+    pluralName: 'modals';
+    singularName: 'modal';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::modal.modal'> &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMotoristaMotorista extends Struct.CollectionTypeSchema {
+  collectionName: 'motoristas';
+  info: {
+    displayName: 'Motorista';
+    pluralName: 'motoristas';
+    singularName: 'motorista';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    habilitacao: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::motorista.motorista'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOrdemTrabalhoOrdemTrabalho
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ordem_trabalhos';
+  info: {
+    displayName: 'Ordem Trabalho';
+    pluralName: 'ordem-trabalhos';
+    singularName: 'ordem-trabalho';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    cliente: Schema.Attribute.Relation<'oneToOne', 'api::cliente.cliente'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    data_solicitacao: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ordem-trabalho.ordem-trabalho'
+    > &
+      Schema.Attribute.Private;
+    motorista: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::motorista.motorista'
+    >;
+    nota_fiscal: Schema.Attribute.String;
+    numero_mtr: Schema.Attribute.String;
+    numero_ot: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    status_ot: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    veiculo: Schema.Attribute.Relation<'oneToOne', 'api::veiculo.veiculo'>;
+  };
+}
+
+export interface ApiServicoServico extends Struct.CollectionTypeSchema {
+  collectionName: 'servicos';
+  info: {
+    displayName: 'Servico';
+    pluralName: 'servicos';
+    singularName: 'servico';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    classe: Schema.Attribute.Relation<'oneToOne', 'api::classe.classe'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao_servico: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servico.servico'
+    > &
+      Schema.Attribute.Private;
+    modal: Schema.Attribute.Relation<'oneToOne', 'api::modal.modal'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valor_unitario: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ApiUnidadeUnidade extends Struct.CollectionTypeSchema {
+  collectionName: 'unidades';
+  info: {
+    displayName: 'Unidade';
+    pluralName: 'unidades';
+    singularName: 'unidade';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::unidade.unidade'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sigla: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVeiculoVeiculo extends Struct.CollectionTypeSchema {
+  collectionName: 'veiculos';
+  info: {
+    displayName: 'Veiculo';
+    pluralName: 'veiculos';
+    singularName: 'veiculo';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    ativo: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    km_por_litro: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::veiculo.veiculo'
+    > &
+      Schema.Attribute.Private;
+    modelo: Schema.Attribute.String;
+    placa: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -882,6 +1173,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::classe.classe': ApiClasseClasse;
+      'api::cliente.cliente': ApiClienteCliente;
+      'api::item-ordem-trabalho.item-ordem-trabalho': ApiItemOrdemTrabalhoItemOrdemTrabalho;
+      'api::modal.modal': ApiModalModal;
+      'api::motorista.motorista': ApiMotoristaMotorista;
+      'api::ordem-trabalho.ordem-trabalho': ApiOrdemTrabalhoOrdemTrabalho;
+      'api::servico.servico': ApiServicoServico;
+      'api::unidade.unidade': ApiUnidadeUnidade;
+      'api::veiculo.veiculo': ApiVeiculoVeiculo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

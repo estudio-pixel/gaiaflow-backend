@@ -17,9 +17,6 @@
     "modelo": {
       "type": "string"
     },
-    "km_por_litro": {
-      "type": "decimal"
-    },
     "ativo": {
       "type": "boolean"
     }

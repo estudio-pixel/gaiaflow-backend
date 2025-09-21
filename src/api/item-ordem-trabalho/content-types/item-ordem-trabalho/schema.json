@@ -21,20 +21,6 @@
       "relation": "oneToOne",
       "target": "api::servico.servico"
     },
-    "unidade": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::unidade.unidade"
-    },
-    "quantidade": {
-      "type": "decimal"
-    },
-    "valor_unitario": {
-      "type": "decimal"
-    },
-    "valor_total": {
-      "type": "decimal"
-    },
     "observacoes": {
       "type": "string"
     }

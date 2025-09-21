@@ -11,9 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "numero_ot": {
-      "type": "string"
-    },
     "data_solicitacao": {
       "type": "datetime"
     },
@@ -33,12 +30,6 @@
       "target": "api::motorista.motorista"
     },
     "numero_mtr": {
-      "type": "string"
-    },
-    "nota_fiscal": {
-      "type": "string"
-    },
-    "status_ot": {
       "type": "string"
     }
   }

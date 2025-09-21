@@ -426,11 +426,8 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
       'api::cliente.cliente'
     > &
       Schema.Attribute.Private;
-    percentual_retencao: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     razao_social: Schema.Attribute.String;
-    tem_retencao: Schema.Attribute.Boolean;
-    tipo_pagamento: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -464,14 +461,10 @@ export interface ApiItemOrdemTrabalhoItemOrdemTrabalho
       'api::ordem-trabalho.ordem-trabalho'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    quantidade: Schema.Attribute.Decimal;
     servico: Schema.Attribute.Relation<'oneToOne', 'api::servico.servico'>;
-    unidade: Schema.Attribute.Relation<'oneToOne', 'api::unidade.unidade'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    valor_total: Schema.Attribute.Decimal;
-    valor_unitario: Schema.Attribute.Decimal;
   };
 }
 
@@ -559,11 +552,8 @@ export interface ApiOrdemTrabalhoOrdemTrabalho
       'oneToOne',
       'api::motorista.motorista'
     >;
-    nota_fiscal: Schema.Attribute.String;
     numero_mtr: Schema.Attribute.String;
-    numero_ot: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    status_ot: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -584,6 +574,7 @@ export interface ApiServicoServico extends Struct.CollectionTypeSchema {
   attributes: {
     ativo: Schema.Attribute.Boolean;
     classe: Schema.Attribute.Relation<'oneToOne', 'api::classe.classe'>;
+    cliente: Schema.Attribute.Relation<'oneToOne', 'api::cliente.cliente'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -596,6 +587,7 @@ export interface ApiServicoServico extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     modal: Schema.Attribute.Relation<'oneToOne', 'api::modal.modal'>;
     publishedAt: Schema.Attribute.DateTime;
+    unidade: Schema.Attribute.Relation<'oneToOne', 'api::unidade.unidade'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -648,7 +640,6 @@ export interface ApiVeiculoVeiculo extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    km_por_litro: Schema.Attribute.Decimal;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

@@ -29,6 +29,16 @@
     },
     "ativo": {
       "type": "boolean"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cliente.cliente"
+    },
+    "unidade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::unidade.unidade"
     }
   }
 }

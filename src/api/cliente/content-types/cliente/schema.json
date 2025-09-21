@@ -20,15 +20,6 @@
     "email": {
       "type": "email"
     },
-    "tipo_pagamento": {
-      "type": "string"
-    },
-    "percentual_retencao": {
-      "type": "decimal"
-    },
-    "tem_retencao": {
-      "type": "boolean"
-    },
     "ativo": {
       "type": "boolean"
     }
